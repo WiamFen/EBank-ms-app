@@ -2,10 +2,7 @@ package net.wiam.customerservice.controllers;
 
 import net.wiam.customerservice.entities.Customer;
 import net.wiam.customerservice.service.CustomerService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,7 +20,7 @@ public class CustomerRestController {
     }
 
     @GetMapping("/customers/{id}")
-    public Customer findCustomerById(long id) {
+    public Customer findCustomerById(@PathVariable long id) {
         return customerService.findCustomerById(id);
     }
 
